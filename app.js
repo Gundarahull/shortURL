@@ -26,6 +26,13 @@ app.use((req, res,next) => {
 
 app.use("/url", require("./routes/url.route"))
 
+app.use('/test',(req,res)=>{
+    return res.status(200).json({
+        success:true,
+        messagae:"Health check"
+    })
+})
+
 app.listen(PORT, () => {
     console.log(`Server is Listening at ${PORT}`);
 })
